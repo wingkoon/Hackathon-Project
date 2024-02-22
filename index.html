@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Your AI Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Background/pic.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #f4f4f4;
+        }
+
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            animation: changeColor 20s linear infinite;
+            font-size: 200%;
+            white-space: nowrap;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
+            font-size: 100%;
+        }
+
+        @keyframes changeColor {
+            0% {
+                color: red;
+            }
+            16.666% {
+                color: orange;
+            }
+            33.333% {
+                color: yellow;
+            }
+            50% {
+                color: green;
+            }
+            66.666% {
+                color: blue;
+            }
+            83.333% {
+                color: indigo;
+            }
+            100% {
+                color: violet;
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-right-color: #fff;
+            }
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto; /* Adjusted margin */
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            height: 100px;
+            margin-bottom: 16px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Banner -->
+    <div class="banner">
+        <span class="typewriter">Your AI Generator</span>
+    </div>
+
+    <!-- Niche Generator Interface -->
+    <div class="container">
+        <h1>Generate Ideas</h1>
+        <form id="generateForm">
+            <label for="user-prompt">Describe your product or input:</label>
+            <textarea id="user-prompt" placeholder="Type your description..."></textarea>
+            <button type="button" onclick="generateIdeas()">Generate</button>
+            <!-- Directly after the form, ensure these are within the same column -->
+            <div id="loading" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Your existing script goes here
+    </script>
+</body>
+</html>
